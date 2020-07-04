@@ -5,12 +5,12 @@ function Search (props) {
         <form>
             <label></label>
             <input
-                value = {props.search}
+                value = {props.employeeSearch}
                 name = "employeeSearch"
                 type = "text"
                 placeholder = "Enter Employee Name"
                 id = "search"
-                onChange = {props.inputChange}
+                onChange = {props.handleInputChange}
             />
             <button>Search</button>
         </form>

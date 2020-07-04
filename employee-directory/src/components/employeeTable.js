@@ -4,23 +4,59 @@ function Employeetable(props) {
     console.log(props);
     
     return(
-        <ul>
-            {props.employees.map(( employee, i ) => 
-                <li key={i}>
-                    {employee && employee.name
-                        ? employee.name.first + " " + employee.name.last
-                        : <></>}
-                </li>)}
-        </ul>
+        // <ul>
+        //     {props.employees.map(( employee, i ) => 
+        //         <li key={i}>
+        //             {employee && employee.name
+        //                 ? employee.name.first + " " + employee.name.last
+        //                 : <></>}
+        //         </li>)}
+        // </ul>
     
-        // <tbody>
-        //     <tr>
-        //         <td data-th="Name">
-        //             <p></p>
-        //         </td>
-        //     </tr>
+        <table>
+            <tbody>
+                <tr>
+                    {props.headings.map((heading, i) => 
+                    <th key ={i}>
+                        {heading && heading.name
+                        ?heading.name
+                        :<></>}
+                    </th>)}
+                    
+                </tr>
+                    {props.employees.map(( employee, i ) =>
+                    <tr key={i} >
+                        <td>
+                            {employee && employee.name
+                            ? employee.name.first + " " + employee.name.last
+                            : <></>}
+                        </td>
+                        <td>
+                            {employee.picture
+                            ? <img src={employee.picture.thumbnail} alt="profile picture" />
+                            : <></>}
+                        </td>
+                        <td>
+                            {employee.cell
+                            ? employee.cell
+                            :<></>}
+                        </td>
+                        <td>
+                            {employee.email
+                            ? employee.email
+                            : <></>}
+                        </td>
+                        <td>
+                            {console.log(employee.dob)
+                            // employee && employee.dob.date
+                            // ? employee.dob.date
+                            // : <></>
+                            }
+                        </td>
 
-        // </tbody>
+                    </tr>)}
+            </tbody>
+        </table>
     
     )
 }

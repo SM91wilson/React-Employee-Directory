@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from "react";
+import React, { Component } from "react";
 import API from "../utils/API";
 import Search from "./searchForm";
 import Employeetable from "./employeeTable";
@@ -7,8 +7,17 @@ class EmployeeData extends Component {
   state = {
     employees: [{}],
     filtered: [{}],
-    order: 'descend'
+    order: 'descend',  
+    headings: [
+        {name: "Name"},
+        {name: "Picture"},
+        {name: "Phone"},
+        {name: "Email"},
+        {name: "D.O.B"}
+    ]
   };
+
+
 
   componentDidMount() {
     API.getUsers()
@@ -21,13 +30,26 @@ class EmployeeData extends Component {
       .catch((err) => console.log(err));
   }
 
+  handleInputChange = event => {
+    const employeeSearch = event.target.value;
+    const filteredEmployees = this.state.employees.filter(employee => {
+        let search = employee.name.first.toLowerCase();
+        if(search.indexOf(employeeSearch.toLowerCase()) !== -1){
+            return employee;
+        }
+    })
+    this.setState({filtered: filteredEmployees});
+  }
+
   render() {
     return (
       <div>
-        <Search />
+        <Search handleInputChange={this.handleInputChange} />
         {/* <table> */}
           <Employeetable 
-            employees ={this.state.employees} />
+            employees = {this.state.filtered}
+            headings = {this.state.headings} 
+            />
         {/* </table> */}
       </div>
     );
