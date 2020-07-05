@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 function Employeetable(props) {
     console.log(props);
     
@@ -47,10 +49,10 @@ function Employeetable(props) {
                             : <></>}
                         </td>
                         <td>
-                            {console.log(employee.dob)
-                            // employee && employee.dob.date
-                            // ? employee.dob.date
-                            // : <></>
+                            {console.log(JSON.stringify(employee.dob))};
+                            {employee && employee.dob
+                            ? (employee.dob.date).split("T")
+                            : <></>
                             }
                         </td>
 

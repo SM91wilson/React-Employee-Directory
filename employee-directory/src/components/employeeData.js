@@ -9,15 +9,13 @@ class EmployeeData extends Component {
     filtered: [{}],
     order: 'descend',  
     headings: [
-        {name: "Name"},
+        {name: "Name", order: "descend"},
         {name: "Picture"},
         {name: "Phone"},
         {name: "Email"},
-        {name: "D.O.B"}
+        {name: "D.O.B", order: "descend"}
     ]
   };
-
-
 
   componentDidMount() {
     API.getUsers()
@@ -28,6 +26,10 @@ class EmployeeData extends Component {
         })
       )
       .catch((err) => console.log(err));
+  }
+
+  handleSort = heading => {
+    
   }
 
   handleInputChange = event => {
