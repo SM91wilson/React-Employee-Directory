@@ -49,7 +49,7 @@ function Employeetable(props) {
                             : <></>}
                         </td>
                         <td>
-                            {console.log(JSON.stringify((employee.dob)))};
+                            {console.log(JSON.stringify((employee.dob)))}
                             {employee && employee.dob
                             ? JSON.stringify((employee.dob)).slice(9,-25)
                             : <></>

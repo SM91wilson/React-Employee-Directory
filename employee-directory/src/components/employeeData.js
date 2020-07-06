@@ -34,6 +34,8 @@ class EmployeeData extends Component {
     console.log(tableOrder);
   }
 
+  
+
   handleInputChange = event => {
     const employeeSearch = event.target.value;
     const filteredEmployees = this.state.employees.filter(employee => {
