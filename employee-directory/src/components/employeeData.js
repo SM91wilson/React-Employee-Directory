@@ -29,7 +29,9 @@ class EmployeeData extends Component {
   }
 
   handleSort = heading => {
-    
+    let direction = 'descending';
+    let tableOrder = this.state.headings.order;
+    console.log(tableOrder);
   }
 
   handleInputChange = event => {
@@ -46,7 +48,10 @@ class EmployeeData extends Component {
   render() {
     return (
       <div>
-        <Search handleInputChange={this.handleInputChange} />
+        <Search 
+            handleInputChange={this.handleInputChange}
+            handleSort = {this.handleSort}
+        />
         {/* <table> */}
           <Employeetable 
             employees = {this.state.filtered}
