@@ -7,15 +7,34 @@ class EmployeeData extends Component {
   state = {
     employees: [{}],
     filtered: [{}],
-    order: 'descend',  
+    order: "descend",
     headings: [
-        {name: "Name", order: "descend"},
-        {name: "Picture"},
-        {name: "Phone"},
-        {name: "Email"},
-        {name: "D.O.B", order: "descend"}
-    ]
+      { name: "Name", order: "descend" },
+      { name: "Picture", order: "descend" },
+      { name: "Phone", order: "descend" },
+      { name: "Email", order: "descend" },
+      { name: "D.O.B", order: "descend" },
+    ],
   };
+  // attempt at table filter
+  // handleSort = () => {
+        //  sortName () {
+
+        //  const sortedEmployees = this.state.filtered.sort(function (a, b) {
+          // VV compare part of func
+        //     if (a.name.first < b.name.first) {
+        //       return -1;
+        //     } else {
+        //       return 1;
+        //     }
+            
+        //   });
+        //   this.setState({ filtered: sortedEmployees });
+        //   return this.state.filtered;
+        // }
+        // sortName(); 
+  // };
+  
 
   componentDidMount() {
     API.getUsers()
@@ -28,37 +47,27 @@ class EmployeeData extends Component {
       .catch((err) => console.log(err));
   }
 
-  handleSort = heading => {
-    let direction = 'descending';
-    let tableOrder = this.state.headings.order;
-    console.log(tableOrder);
-  }
-
-  
-
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const employeeSearch = event.target.value;
-    const filteredEmployees = this.state.employees.filter(employee => {
-        let search = employee.name.first.toLowerCase();
-        if(search.indexOf(employeeSearch.toLowerCase()) !== -1){
-            return employee;
-        }
-    })
-    this.setState({filtered: filteredEmployees});
-  }
+    const filteredEmployees = this.state.employees.filter((employee) => {
+      let search = employee.name.first.toLowerCase();
+      if (search.indexOf(employeeSearch.toLowerCase()) !== -1) {
+        return employee;
+      }
+    });
+    this.setState({ filtered: filteredEmployees });
+  };
 
   render() {
     return (
       <div>
-        <Search 
-            handleInputChange={this.handleInputChange}
-            handleSort = {this.handleSort}
-        />
+        <Search handleInputChange={this.handleInputChange} />
         {/* <table> */}
-          <Employeetable 
-            employees = {this.state.filtered}
-            headings = {this.state.headings} 
-            />
+        <Employeetable
+          employees={this.state.filtered}
+          headings={this.state.headings}
+          handleSort = {this.sortName}
+        />
         {/* </table> */}
       </div>
     );
