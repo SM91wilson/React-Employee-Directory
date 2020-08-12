@@ -27,7 +27,4 @@ SM91Wilson
 
 ## Questions
 
-[1]: https://avatars3.githubusercontent.com/u/60154316?v=4
-![Alt][1]
-
 My profile can be found at: https://github.com/SM91wilson
