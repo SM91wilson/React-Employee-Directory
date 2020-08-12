@@ -3,7 +3,6 @@
 ## Contents
 
 - [Description](#Description)
-- [License](#License)
 - [Usage](#Usage)
 - [Contributers](#Contributers)
 - [Questions](#Questions)
@@ -11,11 +10,6 @@
 ## Description
 
 This project produces a table with potential employees and allows a user  to search for individuals based on their name.
-
-## License
-
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)]
-This project is under a MIT license
 
 ## Usage
 
