@@ -4,7 +4,6 @@ import Wrapper from './components/wrapper';
 import Header from './components/header';
 import EmployeeData from './components/employeeData';
 
-
 function App() {
   return (
     
