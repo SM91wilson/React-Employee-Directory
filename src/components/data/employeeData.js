@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import Search from "./searchForm";
-import Employeetable from "./employeeTable";
+import API from "../../utils/API";
+import Search from "../searchForm/searchForm";
+import Employeetable from "../table/employeeTable";
 
 class EmployeeData extends Component {
   state = {
@@ -62,13 +62,13 @@ class EmployeeData extends Component {
     return (
       <div>
         <Search handleInputChange={this.handleInputChange} />
-        {/* <table> */}
+     
         <Employeetable
           employees={this.state.filtered}
           headings={this.state.headings}
           handleSort = {this.sortName}
         />
-        {/* </table> */}
+      
       </div>
     );
   }
