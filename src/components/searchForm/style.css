@@ -1,0 +1,16 @@
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid teal;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: teal;
+    color: whitesmoke;
+}
+
+input {
+    border-radius: 25px;
+}
