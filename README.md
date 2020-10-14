@@ -9,7 +9,7 @@
 
 ## Description
 
-This project produces a table with potential employees and allows a user  to search for individuals based on their name.
+This project produces a table with potential employees and allows a user  to search for individuals based on their name. It uses React to produce the page and populate the table.
 
 ## Usage
 
